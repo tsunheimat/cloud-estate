@@ -3,7 +3,7 @@
   shell: "mc update"
   register: result
   no_log: true
-  changed_when: result.rc == 0
+  changed_when: yes
   become: true
 
 - name: Notify result
