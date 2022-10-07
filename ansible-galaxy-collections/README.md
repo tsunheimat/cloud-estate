@@ -24,8 +24,8 @@
 
 ## Introduction
 
-[Ansible Galaxy](https://docs.ansible.com/ansible/latest/cli/ansible-galaxy.html) refers to the Galaxy website where users can share roles, and to a command line tool for installing, creating and managing roles.
+[Ansible Galaxy](https://docs.ansible.com/ansible/2.7/reference_appendices/galaxy.html#ansible-galaxy) refers to the Galaxy website where users can share roles, and to a command line tool for installing, creating and managing roles.
 
 ## Reference Links
 
-- [Ansible Galaxy](https://docs.ansible.com/ansible/latest/cli/ansible-galaxy.html)
+- [Ansible Galaxy](https://docs.ansible.com/ansible/2.7/reference_appendices/galaxy.html#ansible-galaxy)
