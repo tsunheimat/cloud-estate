@@ -19,7 +19,6 @@
 
 ## Table of Contents
 
-- [Reference Links](#reference-links)
 - [SSH Configuration](https://github.com/TechProber/cloud-estate/blob/master/playbooks/docs/ssh-configuration.md)
 - [Components made up Ansible](#components-made-up-ansible)
 - [Automation and Orchestration](#automation-and-orchestration)
@@ -27,13 +26,7 @@
 - [Playbook](#playbook)
 - [Task](#task)
 - [Tools](#tools)
-
-## Reference Links
-
-- [Ansible Pre-baked Modules](https://docs.ansible.com/ansible/2.9/modules/modules_by_category.html)
-- [Ansible Galaxy](https://galaxy.ansible.com/)
-- [Ansible sudo – ansible become example](https://www.middlewareinventory.com/blog/ansible-sudo-ansible-become-example/)
-- [Ansible AUR Module](https://github.com/kewlfft/ansible-aur)
+- [Reference Links](#reference-links)
 
 ## Components made up Ansible
 
@@ -347,3 +340,10 @@ You could also make your life slightly easier by adding this to your `ansible.cf
 [defaults]
 vault_password_file=gpg_vault_pass.sh
 ```
+
+## Reference Links
+
+- [Ansible Pre-baked Modules](https://docs.ansible.com/ansible/2.9/modules/modules_by_category.html)
+- [Ansible Galaxy](https://galaxy.ansible.com/)
+- [Ansible sudo – ansible become example](https://www.middlewareinventory.com/blog/ansible-sudo-ansible-become-example/)
+- [Ansible AUR Module](https://github.com/kewlfft/ansible-aur)
