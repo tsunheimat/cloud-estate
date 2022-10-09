@@ -93,6 +93,7 @@ Feel free to contribute. Any recommendations and suggestions are welcome.
 - [![Open-Source Software][oss icon]](https://github.com/IrineSistiana/mosdns) [mosdns](https://github.com/IrineSistiana/mosdns) - 一个 DNS 转发器
 - [![Open-Source Software][oss icon]](https://github.com/P3TERX/script) [script](https://github.com/P3TERX/script) - Some shell script
 - [![Open-Source Software][oss icon]](https://github.com/ipmitool/ipmitool) [ipmitool](https://github.com/ipmitool/ipmitool) - An open-source tool for controlling IPMI-enabled systems
+- [![Open-Source Software][oss icon]](https://github.com/ansible/awx) [awx](https://github.com/ansible/awx) - AWX provides a web-based user interface, REST API, and task engine built on top of Ansible.
 
 ## VPS Related
 
@@ -220,6 +221,7 @@ Feel free to contribute. Any recommendations and suggestions are welcome.
 - [![Neovim][nvim icon]](https://github.com/lewis6991/spellsitter.nvim) [spellsitter.nvim](https://github.com/lewis6991/spellsitter.nvim) - Treesitter powered spellchecker
 - [![Neovim][nvim icon]](https://github.com/iamcco/markdown-preview.nvim) [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) - markdown preview plugin for (neo)vim
 - [![Neovim][nvim icon]](https://github.com/projekt0n/github-nvim-theme) [github-nvim-theme](https://github.com/projekt0n/github-nvim-theme) - Github's Neovim themes
+- [![Neovim][nvim icon]](https://github.com/folke/noice.nvim) [noice.nvim](https://github.com/folke/noice.nvim) - 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 
 ## Contribution
 
