@@ -1,4 +1,7 @@
-### Server Configurations ###
+variable "provider_version" {
+  description = "proxmox provider version"
+  type        = string
+}
 
 variable "proxmox_host" {
   default     = "10.10.10.10"
