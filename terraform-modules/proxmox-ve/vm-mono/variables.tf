@@ -41,7 +41,6 @@ variable "vm_os_type" {
 }
 
 variable "template_name" {
-  default     = "ubuntu-2204-cloudinit-template"
   description = "template name used to deploy the vm"
   type        = string
 }
