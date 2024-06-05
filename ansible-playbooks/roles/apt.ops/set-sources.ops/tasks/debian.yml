@@ -8,7 +8,7 @@
 
       # Primary Updates
       deb {{ primary_source_uri }} {{ release }}-updates main contrib non-free non-free-firmware
-      deb http://mirrors.ustc.edu.cn/debian stable-updates main contrib non-free non-free-firmware
+      deb http://deb.debian.org/debian/ stable-updates main contrib non-free non-free-firmware
 
       # Security Patches
       deb {{ security_source_uri }}-security {{ release }}-security main contrib non-free non-free-firmware
