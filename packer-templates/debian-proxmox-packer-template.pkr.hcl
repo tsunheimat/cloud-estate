@@ -83,7 +83,7 @@ source "proxmox-clone" "bakery-template" {
   }
 
   # Cloud-Init Configurations
-  cloud_init              = true
+  cloud_init              = false
   cloud_init_storage_pool = var.cloud_init_storage_pool
 
   # Network Configurations
