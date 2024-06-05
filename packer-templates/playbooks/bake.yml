@@ -8,7 +8,7 @@
 
   vars:
     distro: "debian" # required; supported distros: ["debian", "opensuse-leap", "opensuse-tumbleweed", "fedora", "ubuntu"]
-    cloudimg_vm_id: 900
+    cloudimg_vm_id: 1600
 
   roles:
     - role: remote.cloudimg.build/
