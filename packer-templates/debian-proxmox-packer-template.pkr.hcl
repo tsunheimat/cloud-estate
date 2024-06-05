@@ -90,7 +90,7 @@ source "proxmox-clone" "bakery-template" {
   network_adapters {
     model    = var.network_adapters_model
     bridge   = var.network_adapters_bridge
-    firewall = true
+    firewall = false
   }
 
   ipconfig {
