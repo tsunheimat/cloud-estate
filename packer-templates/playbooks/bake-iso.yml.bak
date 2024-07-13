@@ -1,0 +1,21 @@
+---
+# --- STAGE 1: Build VM template ---
+- name: "Build VM template"
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  tags: ["stage2", "build_vm_template"]
+
+  roles:
+    - role: iso.packer.build/
+
+# --- STAGE 2: Run post-install tasks ---
+- name: "Run post-install tasks"
+  hosts: proxmox_servers
+  gather_facts: yes
+  tags: ["stage3", "run_post_install_tasks"]
+  become: yes
+
+  roles:
+    - role: remote.post-install.cloudinit/
+
