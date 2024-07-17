@@ -23,4 +23,4 @@ template_name = "testing-ubuntu"
 
 vm_id = "1610"
 
-iso = "iso:iso/ubuntu-22.04-live-server-amd64.iso"
+iso = "iso:iso/ubuntu-22.04.3-live-server-amd64.iso"
