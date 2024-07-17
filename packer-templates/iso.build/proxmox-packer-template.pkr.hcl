@@ -17,7 +17,7 @@ variable "disk_format" { type = string }
 variable "disk_size" { type = string }
 variable "datastore" { type = string }
 #variable "datastore_type" { type = string }
-variable "disk_cache_mode" { type = string }
+#variable "disk_cache_mode" { type = string }
 variable "cloud_init_storage_pool" { type = string }
 variable "iso" { type = string }
 variable "scsi_controller" { type = string }
@@ -28,7 +28,7 @@ variable "ssh_password" { type = string }
 variable "http_directory" { type = string }
 variable "http_bind_address" { type = string }
 
-#variable "boot_command" { type = list(string) }
+variable "boot_command" { type = list(string) }
 #variable "playbook_file" { type = string }
 
 source "proxmox-iso" "ubuntu-server-jammy" {
@@ -54,7 +54,7 @@ source "proxmox-iso" "ubuntu-server-jammy" {
   network_adapters {
     model    = "virtio"
     bridge   = var.bridge
-    firewall = true
+    firewall = "false"
   }
 
   disks {
@@ -63,7 +63,7 @@ source "proxmox-iso" "ubuntu-server-jammy" {
     disk_size         = var.disk_size
     storage_pool      = var.datastore
     #storage_pool_type = var.datastore_type
-    cache_mode        = var.disk_cache_mode
+    #cache_mode        = var.disk_cache_mode
   }
 
   # Cloud-init Configurations
@@ -95,15 +95,15 @@ source "proxmox-iso" "ubuntu-server-jammy" {
   # Boot Configurations
   boot = "c"
   boot_wait    = "5s"
-  #boot_command = var.boot_command
-  boot_command = [
-        "<esc><wait>",
-        "e<wait>",
-        "<down><down><down><end>",
-        "<bs><bs><bs><bs><wait>",
-        "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
-        "<f10><wait>"
-  ]
+  boot_command = var.boot_command
+  #boot_command = [
+  #      "<esc><wait>",
+  #      "e<wait>",
+  #      "<down><down><down><end>",
+  #      "<bs><bs><bs><bs><wait>",
+  #      "autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ---<wait>",
+  #      "<f10><wait>"
+  #]
 }
 
 ### Base Template ###
@@ -121,9 +121,9 @@ build {
             "while [ ! -f /var/lib/cloud/instance/boot-finished ]; do echo 'Waiting for cloud-init...'; sleep 1; done",
             "sudo rm /etc/ssh/ssh_host_*",
             "sudo truncate -s 0 /etc/machine-id",
-            "sudo apt -y autoremove --purge",
-            "sudo apt -y clean",
-            "sudo apt -y autoclean",
+            #"sudo apt -y autoremove --purge",
+            #"sudo apt -y clean",
+            #"sudo apt -y autoclean",
             "sudo cloud-init clean",
             "sudo rm -f /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg",
             "sudo rm -f /etc/netplan/00-installer-config.yaml",
