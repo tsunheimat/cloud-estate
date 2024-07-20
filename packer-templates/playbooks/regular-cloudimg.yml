@@ -1,0 +1,15 @@
+---
+# --- STAGE 1: Bootstrap cloudimg ---
+- name: "Bootstrap cloudimg"
+  hosts: proxmox_servers
+  gather_facts: yes
+  become: yes
+  tags: ["stage1", "bootstrap_cloudimg_template"]
+
+  vars:
+    distro: "debian" # required; supported distros: ["debian", "opensuse-leap", "opensuse-tumbleweed", "fedora", "ubuntu"]
+    cloudimg_vm_id: 1600
+
+  roles:
+    - role: remote.cloudimg.build/
+

@@ -1,48 +1,20 @@
 ---
-# --- STAGE 1: Bootstrap cloudimg ---
-- name: "Bootstrap cloudimg"
-  hosts: proxmox_servers
-  gather_facts: yes
-  become: yes
-  tags: ["stage1", "bootstrap_cloudimg_template"]
-
-  vars:
-    distro: "debian" # required; supported distros: ["debian", "opensuse-leap", "opensuse-tumbleweed", "fedora", "ubuntu"]
-    cloudimg_vm_id: 1600
-
-  roles:
-    - role: remote.cloudimg.build/
-  when: task_running == "cloudimg"
-
-# --- STAGE 2: Build VM template ---
+# --- STAGE 1: Build VM template ---
 - name: "Build VM template"
   hosts: localhost
   connection: local
   gather_facts: yes
-  tags: ["stage2", "build_vm_template"]
+  tags: ["stage1", "build_vm_template"]
 
   roles:
     - role: local.packer.build/
-  when: task_running == "cloudimg"
 
-# --- STAGE 2: Build VM template ---
-- name: "Build VM template"
-  hosts: localhost
-  connection: local
-  gather_facts: yes
-  tags: ["stage2", "build_vm_template"]
-
-  roles:
-    - role: iso.packer.build/
-  when: task_running == "iso-install"
-
-# --- STAGE 3: Run post-install tasks ---
+# --- STAGE 2: Run post-install tasks ---
 - name: "Run post-install tasks"
   hosts: proxmox_servers
   gather_facts: yes
-  tags: ["stage3", "run_post_install_tasks"]
+  tags: ["stage2", "run_post_install_tasks"]
   become: yes
 
   roles:
     - role: remote.post-install.cloudinit/
-  when: task_running == "cloudimg"

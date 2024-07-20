@@ -35,7 +35,6 @@ autoinstall:
     swap:
       filename: /swapfile
       size: 1G
-      maxsize: 1G
   user-data:
     package_upgrade: false
     timezone: Asia/Hong_Kong
