@@ -4,6 +4,14 @@ autoinstall:
   locale: en_US
   keyboard:
     layout: us
+  write_files:
+  - path: /etc/sysctl.d/10-disable-ipv6.conf
+    permissions: 0644
+    owner: root
+    content: |
+      net.ipv6.conf.all.disable_ipv6 = 1
+      net.ipv6.conf.default.disable_ipv6 = 1
+      net.ipv6.conf.lo.disable_ipv6 = 1
   ssh:
     install-server: true
     allow-pw: true
@@ -12,7 +20,15 @@ autoinstall:
     allow_public_ssh_keys: true
   packages:
     - sudo
-    - qemu-guest-agent 
+    - qemu-guest-agent
+    - net-tools
+    - curl
+    - wget
+    - git
+    - ansible
+    - linux-generic
+    - linux-headers-generic
+    - linux-image-generic 
   storage:
     layout:
       name: direct
@@ -23,6 +39,7 @@ autoinstall:
   user-data:
     package_upgrade: false
     timezone: Asia/Hong_Kong
+    ssh_pwauth: true # enable SSH password login
     users:
       - name: matthew
         groups: [adm, sudo]
@@ -34,7 +51,8 @@ autoinstall:
         ssh_authorized_keys:
            - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJHoNrlfhQGsJmGfxNxxJLOGVj2uAluGq3ZOe+Uidk6C packer
       - name: packer
-        #passwd: $6$xyz$JJbmTJ7EzYLxcBOnv3bwWLhpQZ.WuX8yJkNaLKgtS747n2zUNPh8LZKhQPBnLAptBG429x5r0RJ.ZFIXiIMPw/  #packer
+        # echo "packer" | openssl passwd -6 -stdin
+        password: $6$d0aRbh7szrr2RWB3$.hgXkdfQUGAxBQ/NYw.wurA1M3OtbNEvrByEhoHf4OiWeumLYuAxwaCSNeW3LAjIeQWhAmS0vYgqayLKm5/AE1
         ssh_authorized_keys:
            - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJHoNrlfhQGsJmGfxNxxJLOGVj2uAluGq3ZOe+Uidk6C packer
         groups: [sudo, adm, users]

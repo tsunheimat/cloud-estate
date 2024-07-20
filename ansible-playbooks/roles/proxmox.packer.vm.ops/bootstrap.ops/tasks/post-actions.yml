@@ -13,7 +13,7 @@
 - name: Clean apt cache
   ansible.builtin.apt:
     autoclean: yes
-    clean: yes
+      #clean: yes
 
 - name: Remove cache files under /tmp
   block:

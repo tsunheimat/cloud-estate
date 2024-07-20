@@ -2,22 +2,22 @@
 base_packages:
   - linux-headers-generic
   - linux-image-generic
-  - software-properties-common
-  - apt-transport-https
+    #- software-properties-common
+    #- apt-transport-https
   - ca-certificates
   - htop
   - screen
-  - tree
-  - ripgrep
+    #- tree
+    #- ripgrep
   - vim
   - wget
   - curl
 
 extra_packages:
-  - neofetch
-  - dnsutils 
+  #- neofetch
+  #- dnsutils 
   - iputils-ping
   - net-tools
-  - telnet
-  - tmux
-  - gnupg-agent
+    #- telnet
+    #- tmux
+    #- gnupg-agent

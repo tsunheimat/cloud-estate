@@ -1,0 +1,11 @@
+#!/bin/bash
+
+packer build -force \
+  -var-file ../vars/host.pkvars.hcl \
+  -var-file vars/test.pkr.hcl \
+  -var-file vars/boot-command/ubuntu-2204.pkr.hcl \
+  -var playbook_file=../playbooks/debian_12_server.yml \
+  -var template_name=proxmox-iso.ubuntu-server-jammy \
+  -var proxmox_api_password=$PM_PASS \
+  -var vm_id=1610 \
+  proxmox-packer-template.pkr.hcl | tee build.log

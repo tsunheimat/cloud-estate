@@ -2,13 +2,13 @@
 - name: Generate Packer build script based on inputs
   template:
     src: "{{ role_path }}/templates/build.sh.j2"
-    dest: "../build.sh"
+    dest: "../iso.build/build.sh"
     mode: 0644
 
 - name: Run packer build locally
   shell: "sh build.sh"
   args:
-    chdir: "../"
+    chdir: "../iso.build"
   register: packer_build  # Capture output for further processing
 
 - name: Display build logs

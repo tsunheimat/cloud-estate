@@ -1,0 +1,20 @@
+---
+- name: "Bake proxmox ubuntu-2204-server"
+  hosts: localhost
+  become: yes
+
+  vars_files:
+    - ./vars/apt.yml
+      #- ./vars/keys.yml
+
+  roles:
+  - role: roles/apt.ops/set-sources.ops/
+    vars:
+      os: "ubuntu"
+      release: "jammy"
+      primary_source_uri: "http://archive.ubuntu.com/ubuntu"
+      security_source_uri: "http://archive.ubuntu.com/ubuntu"
+  - role: roles/apt.ops/install-packages.ops/
+    #- role: roles/maintenance.ops/key.ops/
+  - role: roles/proxmox.packer.vm.ops/bootstrap.ops/
+  - role: roles/maintenance.ops/locales.ops/

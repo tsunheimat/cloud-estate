@@ -1,4 +1,4 @@
 ---
 operation: add
 public_keys:
-  - /tmp/id_rsa.pub
+  - /home/matthew/cloud-estate/packer-templates/id_rsa.pub

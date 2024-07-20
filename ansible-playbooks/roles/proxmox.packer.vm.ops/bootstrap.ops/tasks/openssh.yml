@@ -12,7 +12,7 @@
     line: "PermitRootLogin no"
   become: yes
 
-- name: Restart openssh server
-  ansible.builtin.service:
-    name: ssh
-    state: restarted
+    #- name: Restart openssh server
+    #ansible.builtin.service:
+    #name: ssh
+    #state: restarted

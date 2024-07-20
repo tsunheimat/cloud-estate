@@ -2,6 +2,7 @@
 - name: Update package source list
   apt:
     update_cache: yes
+  ignore_errors: yes
 
 - name: Install base packages defined in the list
   ansible.builtin.apt:

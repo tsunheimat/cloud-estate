@@ -1,0 +1,12 @@
+---
+# --- STAGE 2: Build VM template ---
+- name: "Build VM template"
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  tags: ["stage2", "build_vm_template"]
+
+  roles:
+    - role: iso.packer.build/
+
+
