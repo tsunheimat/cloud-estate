@@ -51,7 +51,7 @@ autoinstall:
            - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJHoNrlfhQGsJmGfxNxxJLOGVj2uAluGq3ZOe+Uidk6C packer
       - name: packer
         # echo "packer" | openssl passwd -6 -stdin
-        password: $6$d0aRbh7szrr2RWB3$.hgXkdfQUGAxBQ/NYw.wurA1M3OtbNEvrByEhoHf4OiWeumLYuAxwaCSNeW3LAjIeQWhAmS0vYgqayLKm5/AE1
+        passwd: $6$d0aRbh7szrr2RWB3$.hgXkdfQUGAxBQ/NYw.wurA1M3OtbNEvrByEhoHf4OiWeumLYuAxwaCSNeW3LAjIeQWhAmS0vYgqayLKm5/AE1
         ssh_authorized_keys:
            - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJHoNrlfhQGsJmGfxNxxJLOGVj2uAluGq3ZOe+Uidk6C packer
         groups: [sudo, adm, users]

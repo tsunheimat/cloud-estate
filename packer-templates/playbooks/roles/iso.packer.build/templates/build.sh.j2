@@ -3,6 +3,7 @@
 packer build -force \
   -var-file {{ host_config }} \
   -var-file {{ vm_config }} \
+  -var-file {{ vm_stable_config }} \
   -var-file {{ boot_command_config }} \
   -var playbook_file={{ playbook_file }} \
   -var template_name={{ template_name }} \

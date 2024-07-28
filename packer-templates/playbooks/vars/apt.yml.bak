@@ -12,21 +12,6 @@ base_packages:
   - vim
   - wget
   - curl
-  - gpg
-  - opensm
-  - git
-  - sysstat
-  - iotop
-  - nfs-common
-  - htop
-  - ibutils
-  - iperf3
-  - tcptraceroute 
-  - libmlx4-1 
-  - infiniband-diags 
-  - ibverbs-utils 
-  - rdmacm-utils 
-  - infiniband-diags
 
 extra_packages:
   #- neofetch
